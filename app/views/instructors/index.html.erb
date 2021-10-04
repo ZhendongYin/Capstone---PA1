@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<h1>Instructors</h1>
+<%= link_to 'New Instructor', new_instructor_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Middle</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col" colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instructors.each do |instructor| %>
+      <tr>
+        <td><%= instructor.first %></td>
+        <td><%= instructor.middle %></td>
+        <td><%= instructor.last %></td>
+        <td><%= instructor.email %></td>
+        <td><%= link_to 'Show', instructor %></td>
+        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @instructors, theme: 'bootstrap-5' %>
+
+
+
+
