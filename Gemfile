@@ -37,6 +37,14 @@ gem 'kaminari', '~> 1.2', '>= 1.2.1'
 # Bootstrap 5 compatible styles for Kaminari gem
 gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 
+# bcrypt() is a sophisticated and secure hash algorithm designed by The OpenBSD project for hashing passwords. The bcrypt Ruby gem provides a simple wrapper for safely handling passwords.
+gem 'bcrypt', '~> 3.1', '>= 3.1.16'
+
+# A Ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface.
+gem 'redis', '~> 4.5', '>= 4.5.1'
+# Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic.
+gem 'slim', '~> 4.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
