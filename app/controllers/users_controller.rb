@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       log_in @user
+      @courses = Course.all.order(:id).page(params[:page]).per(10)
     else
       @error_message = @user.errors.full_messages.first
     end
