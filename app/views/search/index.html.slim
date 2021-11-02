@@ -14,6 +14,6 @@
           .col-auto
             = f.label 'Subject:', class: 'fs-5'
           .col-auto
-            = f.select :subject, Subject.pluck(:name, :id ),{prompt: 'All Subjects'} , class: 'form-select course-search'
+            = f.select :subject, Subject.order(:name).pluck(:name, :id ),{prompt: 'All Subjects'} , class: 'form-select course-search'
   .search-course-table
     = render partial: 'courses/table', locals: {courses: @courses}

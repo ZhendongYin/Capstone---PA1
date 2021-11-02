@@ -16,10 +16,10 @@ class User < ApplicationRecord
     $login_redis_client.set(self.id, self.remember_token, ex: 30 * 24 * 60 * 60)
   end
 
-  def authenticated?(remember_token)
+  def authenticated?(_remember_token)
     remember_digest = $login_redis_client.get(self.id)
     return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(self.remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(_remember_token)
   end
 
   def forget

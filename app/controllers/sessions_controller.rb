@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    @courses = Course.all.order(:id).page(params[:page]).per(10)
+    redirect_to root_path
   end
 
   private
