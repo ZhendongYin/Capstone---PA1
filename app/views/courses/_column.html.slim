@@ -1,0 +1,9 @@
+td = course.code
+td = course.name
+td = course.description
+td = course.independent_study.to_s.upcase
+- if logged_in?
+  - if user_courses.include?(course.id)
+    td = link_to 'Drop', drop_course_users_path(course_id: course.id), method: :post, remote: true, data: { confirm: 'Are you sure?' } 
+  - else
+    td = link_to 'Register', register_course_users_path(course_id: course.id), method: :post, remote: true, data: { confirm: 'Are you sure?' } 

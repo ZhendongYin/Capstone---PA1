@@ -1,0 +1,19 @@
+#search-index
+  p#notice
+    = notice
+    h1 Search Courses
+
+  .course-search-bar
+    = form_with(url: search_path, class: 'course-search-form', local: false) do |f|
+      .search_item
+        .row.g-3.align-items-center
+          .col-auto
+            = f.label 'Course Name:', class: 'fs-5'
+          .col-auto
+            = f.text_field :search_text, class: 'form-control course-search'
+          .col-auto
+            = f.label 'Subject:', class: 'fs-5'
+          .col-auto
+            = f.select :subject, Subject.pluck(:name, :id ),{prompt: 'All Subjects'} , class: 'form-select course-search'
+  .search-course-table
+    = render partial: 'courses/table', locals: {courses: @courses}

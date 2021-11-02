@@ -7,7 +7,13 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "bootstrap"
 
+
+import "./search_index.js"
+
+global.$ = require('jquery')
 Rails.start()
+global.Rails = Rails;
 Turbolinks.start()
 ActiveStorage.start()

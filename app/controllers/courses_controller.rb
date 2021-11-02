@@ -3,8 +3,13 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.all.order(:id).page(params[:page]).per(10)
-    
+    if params[:registered].present?
+      @courses = current_user.courses
+      @my_course = true
+    else
+      @courses = Course.all
+    end
+    @courses = @courses.order(:id).page(params[:page]).per(10)
   end
 
   # GET /courses/1 or /courses/1.json

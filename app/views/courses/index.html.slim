@@ -1,0 +1,9 @@
+p#notice
+  = notice
+- if @my_course
+  h1 My Courses
+- else
+  h1 Courses
+/= link_to 'New Course', new_course_path
+.course-table
+  = render partial: 'courses/table', locals: {courses: @courses}

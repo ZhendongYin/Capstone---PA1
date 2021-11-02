@@ -1,0 +1,20 @@
+- if logged_in?
+  - user_courses = current_user.courses.pluck(:id)
+table.table
+  thead
+    tr
+      th.col-md-1 scope='col' Code
+      th.col-md-2 scope='col' Name
+      th.col-md-3 scope='col' Description
+      th.col-md-2 scope='col' Independent study
+      - if logged_in?
+        th.col-md-1 scope='col' colspan='3' Actions
+
+  tbody
+    - if courses
+      - courses.each do |course|
+        tr class="course-#{course.id}"
+          = render partial: 'courses/column', locals: {course: course, user_courses: user_courses}
+
+- if courses.respond_to?(:current_page)
+  = paginate courses, theme: 'bootstrap-5'

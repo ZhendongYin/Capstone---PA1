@@ -1,0 +1,22 @@
+.modal#login_modal tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5.modal-title Sign in
+        button.btn-close type="button" data-bs-dismiss="modal" aria-label="Close"
+      = form_with(url: sessions_path , scope: :session, local: false) do |f|
+        .modal-body
+          .error
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+          = f.label :remember_me, class: "checkbox inline" do
+            = f.check_box :remember_me
+            span &nbsp;Stay logged in for 30 days
+        .modal-footer
+          span.pull-left.form-control-static
+            | New user? 
+            = link_to 'Sign up now!', new_user_path, remote: true
+          button.btn.btn-secondary[type='button' data-bs-dismiss='modal'] Cancel
+          button.btn.btn-primary[type="submit"] Login

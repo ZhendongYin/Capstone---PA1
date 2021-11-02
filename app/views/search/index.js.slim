@@ -1,0 +1,5 @@
+|    
+  if ($('.search-course-table').length) {
+    $('.search-course-table').empty();
+    $('.search-course-table').append("#{j(render partial: 'courses/table', locals: {courses: @courses})}");
+  }

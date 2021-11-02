@@ -1,0 +1,12 @@
+|   
+  $('.body_navbar').empty();
+  $('.body_navbar').append("#{j(render partial: 'layouts/navbar')}");
+  if ($('.course-table').length) {
+    $('.course-table').empty();
+    $('.course-table').append("#{j(render partial: 'courses/table', locals: {courses: @courses})}");
+  }
+  if ($('.search-course-table').length) {
+      form = $('.course-search-form')[0];
+      Rails.fire(form, "submit");
+  }
+

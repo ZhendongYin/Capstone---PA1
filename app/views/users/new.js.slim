@@ -1,0 +1,6 @@
+| 
+  $('#login_modal').modal('hide');
+  var elementId = '#new_user_modal';
+  $('.be-wrapper').empty();
+  $('.be-wrapper').append("#{j(render partial: 'new_modal', locals: {user: @user})}");
+  $(elementId).modal('show');

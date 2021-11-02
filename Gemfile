@@ -44,6 +44,8 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 gem 'redis', '~> 4.5', '>= 4.5.1'
 # Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic.
 gem 'slim', '~> 4.1'
+# CoffeeScript adapter for the Rails asset pipeline.
+gem 'coffee-rails', '~> 5.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

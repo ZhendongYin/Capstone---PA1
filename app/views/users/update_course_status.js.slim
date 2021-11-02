@@ -1,0 +1,5 @@
+- user_courses = current_user.courses.pluck(:id)
+- column_id = "course-#{@course.id}"
+|  
+  $(".#{column_id}").empty();
+  $(".#{column_id}").append("#{j(render partial: 'courses/column', locals: {course: @course, user_courses: user_courses})}");
