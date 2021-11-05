@@ -1,4 +1,11 @@
-# Capstone---PA1
+# Capstone---PA2
+------------- NOTE: THIS IS VERY IMPORTANT -------------
+
+The 'Enroll' button will only be displayed after you have logged in !!!!!!!!!!
+
+------------- NOTE: THIS IS VERY IMPORTANT -------------
+
+
 
 * GitHub Link
 
