@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   def remember
     self.remember_token = SecureRandom.urlsafe_base64
-    $login_redis_client.set(self.id, self.remember_token, ex: 30 * 24 * 60 * 60)
+    $login_redis_client.set(self.id, self.remember_token)
   end
 
   def authenticated?(_remember_token)
